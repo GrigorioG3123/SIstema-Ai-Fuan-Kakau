@@ -1,59 +1,229 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistema de Gestão CCT - Timor Leste
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-10.x-red.svg)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0+-orange.svg)](https://mysql.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## About Laravel
+Sistema completo de gestão de café desenvolvido em Laravel para Timor Leste. Gerencie produtores, tipos de café, armazéns, transações e gere relatórios profissionais mensais.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🌟 Características
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Gestão Completa de Produtores**: CRUD completo para cadastro e gerenciamento de produtores de café
+- **Tipos de Café**: Controle de diferentes variedades e tipos de café
+- **Armazéns**: Gestão de locais de armazenamento
+- **Transações**: Registro de produção e vendas com controle de estoque
+- **Relatórios Profissionais**: Relatórios mensais com gráficos, métricas e impressão otimizada
+- **Dashboard Administrativo**: Interface moderna com navegação intuitiva
+- **Autenticação**: Sistema de login e registro seguro
+- **Interface Responsiva**: Design adaptável para desktop e mobile
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Instalação e Configuração
 
-## Learning Laravel
+### Pré-requisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- PHP 8.2 ou superior
+- Composer
+- MySQL 8.0 ou superior
+- Node.js e NPM (para assets)
+- XAMPP ou servidor web similar
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Passos de Instalação
 
-## Laravel Sponsors
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/GrigorioG3123/SIstema-Ai-Fuan-Kakau.git
+   cd SIstema-Ai-Fuan-Kakau
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Instale as dependências do PHP:**
+   ```bash
+   composer install
+   ```
 
-### Premium Partners
+3. **Instale as dependências do Node.js:**
+   ```bash
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4. **Configure o arquivo de ambiente:**
+   ```bash
+   cp .env.example .env
+   ```
 
-## Contributing
+   Edite o arquivo `.env` com suas configurações:
+   ```env
+   APP_NAME="Sistema CCT - Timor Leste"
+   APP_ENV=local
+   APP_KEY=
+   APP_DEBUG=true
+   APP_URL=http://localhost
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=cct_laravel
+   DB_USERNAME=seu_usuario
+   DB_PASSWORD=sua_senha
+   ```
 
-## Code of Conduct
+5. **Gere a chave da aplicação:**
+   ```bash
+   php artisan key:generate
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. **Execute as migrações e seeders:**
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
 
-## Security Vulnerabilities
+7. **Compile os assets:**
+   ```bash
+   npm run build
+   # ou para desenvolvimento
+   npm run dev
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+8. **Inicie o servidor:**
+   ```bash
+   php artisan serve
+   ```
 
-## License
+   Acesse: http://localhost:8000
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📊 Funcionalidades
+
+### Gestão de Produtores
+- Cadastro completo de produtores
+- Visualização de detalhes
+- Edição de informações
+- Controle de status ativo/inativo
+
+### Gestão de Café
+- Cadastro de tipos de café
+- Controle de variedades
+- Gestão de preços e características
+
+### Gestão de Armazéns
+- Cadastro de locais de armazenamento
+- Controle de capacidade
+- Localização geográfica
+
+### Transações
+- Registro de produção
+- Registro de vendas
+- Controle de estoque automático
+- Histórico completo de transações
+
+### Relatórios
+- **Relatório Geral**: Visão geral do sistema
+- **Relatório Anual**: Análise anual com gráficos
+- **Relatório Mensal**: Relatório profissional mensal com:
+  - Resumo executivo com métricas chave
+  - Gráfico de desempenho produção vs vendas
+  - Quebra detalhada por tipo de transação
+  - Desempenho diário (quando disponível)
+  - Otimização para impressão
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Laravel 10.x**: Framework PHP robusto e elegante
+- **MySQL**: Banco de dados relacional
+- **Bootstrap 5**: Framework CSS responsivo
+- **Chart.js**: Gráficos interativos
+- **AdminLTE**: Template administrativo
+- **Font Awesome**: Ícones vetoriais
+- **Vite**: Build tool moderno
+
+## 📁 Estrutura do Projeto
+
+```
+cct-laravel/
+├── app/
+│   ├── Http/Controllers/Admin/    # Controladores administrativos
+│   ├── Models/                   # Modelos Eloquent
+│   └── Providers/               # Service Providers
+├── database/
+│   ├── migrations/              # Migrações do banco
+│   └── seeders/                 # Seeders para dados iniciais
+├── public/                      # Assets públicos
+├── resources/
+│   ├── css/                     # Stylesheets
+│   ├── js/                      # JavaScript
+│   └── views/                   # Templates Blade
+│       └── admin/               # Views administrativas
+│           ├── relatorios/      # Relatórios
+│           ├── produtors/       # Gestão de produtores
+│           ├── kafe-tipu/       # Tipos de café
+│           ├── armajen/         # Armazéns
+│           └── transasauns/     # Transações
+└── routes/
+    └── web.php                  # Rotas da aplicação
+```
+
+## 🔧 Comandos Úteis
+
+```bash
+# Limpar cache
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+
+# Executar testes
+php artisan test
+
+# Criar novo controlador
+php artisan make:controller NomeController
+
+# Criar nova migração
+php artisan make:migration nome_da_migracao
+
+# Criar novo model
+php artisan make:model NomeModel
+```
+
+## 📈 Relatórios Disponíveis
+
+### Relatório Mensal
+- **Métricas Principais**: Produção total, vendas, estoque atual, receita
+- **Taxa de Conversão**: Percentual de produção convertida em vendas
+- **Gráfico de Desempenho**: Comparação visual produção vs vendas
+- **Quebra Detalhada**: Análise por tipo de transação
+- **Desempenho Diário**: Quando há dados suficientes
+- **Impressão Otimizada**: Layout profissional para relatórios impressos
+
+## 🤝 Contribuição
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👥 Desenvolvedores
+
+- **GrigorioG3123** - Desenvolvimento inicial
+
+## 🙏 Agradecimentos
+
+- Laravel Framework
+- Comunidade PHP
+- Governo de Timor Leste
+- Produtores de café locais
+
+## 📞 Suporte
+
+Para suporte técnico ou dúvidas:
+- Abra uma issue no GitHub
+- Email: [seu-email@exemplo.com]
+
+---
+
+**Sistema desenvolvido para Timor Leste 🇹🇱**
+*Promovendo a gestão eficiente da produção de café local*
